@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 2019_09_06_155618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clips", force: :cascade do |t|
+    t.string "category"
+    t.string "location"
+    t.date "start_time"
+    t.date "end_time"
+    t.string "title"
+    t.string "position"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
