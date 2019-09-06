@@ -1,4 +1,4 @@
-class ClipsController < ApplicationController
+class ClipsController < ProtectedController
   before_action :set_clip, only: [:show, :update, :destroy]
 
   # GET /clips
@@ -15,7 +15,7 @@ class ClipsController < ApplicationController
 
   # POST /clips
   def create
-    @clip = Clip.new(clip_params)
+    @clip = current_user.clips.build(clip_params)
 
     if @clip.save
       render json: @clip, status: :created, location: @clip
@@ -41,11 +41,11 @@ class ClipsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_clip
-      @clip = Clip.find(params[:id])
+      @clip = current_user.clips.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def clip_params
-      params.require(:clip).permit(:category, :location, :start_time, :end_time, :title, :position, :description)
+      params.require(:clip).permit(:category, :location, :start_time, :end_time, :title, :position, :description, :user_id)
     end
 end
