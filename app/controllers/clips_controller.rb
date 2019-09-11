@@ -3,7 +3,7 @@ class ClipsController < ProtectedController
 
   # GET /clips
   def index
-    @clips = Clip.all
+    @clips = current_user.clips.all
 
     render json: @clips
   end
