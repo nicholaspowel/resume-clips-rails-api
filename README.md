@@ -27,11 +27,11 @@ As a user:
 
 ## Website Wireframes
 
-![image](https://drive.google.com/file/d/10E42GiRzCYXfrn9hROw-xQbMx5x4agXb/view?usp=sharing)
+![image](./public/wireframes.jpg)
 
 ## Entity Relationship Diagram
 
-![image](https://drive.google.com/file/d/10ED1uM2eKj_gyP9G1Us43-8cR1Fbvpp_/view?usp=sharing)
+![image](./public/ERD.jpg)
 
 ## Routes
 
