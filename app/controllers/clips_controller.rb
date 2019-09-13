@@ -46,6 +46,6 @@ class ClipsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def clip_params
-      params.require(:clip).permit(:category, :location, :start_time, :end_time, :title, :position, :description, :user_id)
+      params.require(:clip).permit(:category, :location, :start_time, :end_time, :title, :position, :description)
     end
 end
